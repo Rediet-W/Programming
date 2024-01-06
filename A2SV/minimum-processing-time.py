@@ -4,5 +4,5 @@ class Solution:
         processorTime.sort()
         mx=0        
         for i in range(len(processorTime)):
-            mx = max(mx, processorTime[i] + max(tasks[i*4: i*4+4]))
+            mx = max(mx, processorTime[i] + tasks[i*4])
         return mx

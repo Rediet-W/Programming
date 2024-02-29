@@ -4,45 +4,6 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-'''class Solution:
-    def maxSumBST(self, root: Optional[TreeNode]) -> int:
-        def is_valid_bst(node, min_val, max_val):
-            if not node:
-                return True
-            if not (min_val < node.val < max_val):
-                return False
-            return (is_valid_bst(node.left, min_val, node.val) and
-                    is_valid_bst(node.right, node.val, max_val))
-        
-        def sum_bst(node):
-            nonlocal max_sum
-            if not node:
-                return 0
-            if is_valid_bst(node, float('-inf'), float('inf')):
-                subtree_sum = node.val + sum_bst(node.left) + sum_bst(node.right)
-                max_sum = max(max_sum, subtree_sum)
-                return subtree_sum
-            else:
-                return 0
-
-        max_sum = 0
-        sum_bst(root)
-        return max(max_sum, 0)
-        
-
-        def sum_bst(node):
-            if not node:
-                return 0
-            if is_valid_bst(node, float('-inf'), float('inf')):
-                return node.val + sum_bst(node.left) + sum_bst(node.right)
-            else:
-                return max(sum_bst(node.left), sum_bst(node.right))
-
-            return sum_bst(root)
-        #print(is_valid_bst(root, float('-inf'), float('inf')))
-        return max(sum_bst(root), 0)
-        #time O(n) - nodes
-        space O(h)'''
 class Pair:
     def __init__(self, s, b=False, lmax=float('-inf'), rmin=float('inf')):
         self.sum = s
